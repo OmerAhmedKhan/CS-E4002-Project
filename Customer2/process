@@ -1,0 +1,5 @@
+make virtual env
+add dependencies
+-mlflow
+-xgboost
+-requests

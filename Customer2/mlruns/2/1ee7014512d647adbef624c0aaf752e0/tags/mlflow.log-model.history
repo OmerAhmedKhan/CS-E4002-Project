@@ -1,0 +1,1 @@
+[{"run_id": "1ee7014512d647adbef624c0aaf752e0", "artifact_path": "direct-marketing-xgboost-model", "utc_time_created": "2020-04-05 17:45:50.141041", "flavors": {"python_function": {"loader_module": "mlflow.xgboost", "python_version": "3.6.8", "data": "model.xgb", "env": "conda.yaml"}, "xgboost": {"xgb_version": "1.0.2", "data": "model.xgb"}}}]

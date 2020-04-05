@@ -1,0 +1,12 @@
+artifact_path: direct-marketing-xgboost-model
+flavors:
+  python_function:
+    data: model.xgb
+    env: conda.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.6.8
+  xgboost:
+    data: model.xgb
+    xgb_version: '0.90'
+run_id: 94100f32505a4df799532889dfcdf615
+utc_time_created: '2020-04-05 17:35:51.299585'

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/oak/sagemaker-automation/mlflow/direct-marketing-xgboost/mlruns/2/aab8276d2b1d4c11b106a2dd0a947a87/artifacts
+end_time: 1586108535706
+entry_point_name: ''
+experiment_id: '2'
+lifecycle_stage: active
+name: ''
+run_id: aab8276d2b1d4c11b106a2dd0a947a87
+run_uuid: aab8276d2b1d4c11b106a2dd0a947a87
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1586108530973
+status: 3
+tags: []
+user_id: oak

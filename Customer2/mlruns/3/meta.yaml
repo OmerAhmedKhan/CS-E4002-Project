@@ -1,0 +1,4 @@
+artifact_location: file:///home/oak/sagemaker-automation/mlflow/direct-marketing-xgboost/mlruns/3
+experiment_id: '3'
+lifecycle_stage: active
+name: oak-marketing-xgboost
