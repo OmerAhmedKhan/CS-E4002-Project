@@ -24,6 +24,10 @@ if not sys.warnoptions:
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('psp.mltraining')
+MLFLOW_TRACKING_URI = 'http://54.154.121.22/'
+''' set up tracking uri '''
+mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
+client = mlflow.tracking.MlflowClient(MLFLOW_TRACKING_URI)
 
 
 def get_or_create_experiment(experiment_name) -> Experiment:
@@ -139,19 +143,8 @@ if __name__ == '__main__':
     :param test_size: the ratio of test data vs training data
     """
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data-path')
-    parser.add_argument('--test-size')
-    args = parser.parse_args()
-
-    if not args.data_path:
-        raise Exception('argument --data-path should be specified')
-
-    if not args.test_size:
-        raise Exception('argument --test-size should be specified')
-
-    pipeline, test_metric_name, test_metric_value = train(args.data_path, float(args.test_size))
-    if os.getenv('MLFLOW_TRACKING_URI', None):
+    pipeline, test_metric_name, test_metric_value = train('/home/oak/CS-E4002-Project/Customer1/pulsar_stars.csv', 0.2)
+    if MLFLOW_TRACKING_URI:
         log_metrics_and_model(pipeline=pipeline, test_metric_name=test_metric_name, test_metric_value=test_metric_value)
     else:
         logger.info(f'Env var MLFLOW_TRACKING_URI not set, skipping mlflow logging.')
