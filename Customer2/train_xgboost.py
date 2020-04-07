@@ -7,6 +7,12 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 
+''' include user name and password to request '''
+TRACKING_URI = 'http://54.154.121.22/'
+''' set up tracking uri '''
+mlflow.set_tracking_uri(TRACKING_URI)
+client = mlflow.tracking.MlflowClient(TRACKING_URI)
+
 def load_data(path, sep=';', test_size=0.2, random_state=123):
     data = pd.read_csv(path, sep=';')
     # Process dataset
@@ -33,8 +39,6 @@ def run_exp(data_path, exp_name='default_name', model_name="direct-marketing-xgb
     ''' log parameters, metrics and artifacts on server '''
 
     with mlflow.start_run(run_name='direct-marketing-xgboost-basic') as run:
-        mlflow.log_param('parameter', 1)
-        mlflow.log_metric('metric', 2)
         mlflow.log_artifact('./test_picture.png')
 
         x_train, x_test, y_train, y_test = load_data(data_path)
@@ -58,6 +62,7 @@ def run_exp(data_path, exp_name='default_name', model_name="direct-marketing-xgb
         mlflow.xgboost.log_model(cls, model_name)
         artifact_path = mlflow.get_artifact_uri()
         model_path = '{}/{}-model/'.format(artifact_path, exp_name)
+        mlflow.log_param("model_path", model_path)
         mlflow.end_run()
         return model_path
 
