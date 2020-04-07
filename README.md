@@ -1,16 +1,12 @@
-![image alt text](image_0.png)
+#### Project Report
 
-# **STUDY LOG 4 (Project Report)**
-
-Author:
-
-Omer Ahmed Khan
+Author: Omer Ahmed Khan
 
 802062
 
 omer.khan@aalto.fi
 
-# CS-E4002 - Special Course in Computer Science: Advanced Topics in Systems for Big Data and Machine Learning
+##### CS-E4002 - Special Course in Computer Science: Advanced Topics in Systems for Big Data and Machine Learning
 
 SPRING 2020
 
@@ -26,7 +22,7 @@ From the course study, a different concept was utilized to model this solution. 
 
 A higher level of flow diagram could be seen as below:
 
-![image alt text](image_1.png)
+![image alt text](ReportImages/image_1.png)
 
 To understand this, we can easily able to see that there are two contributors to this system. One is the user itself who want to get services and Framework itself. The responsibility is divided as follow:
 
@@ -54,13 +50,13 @@ The user can see the results of his experimentation on MLFlow UI which is deploy
 
 The Architecture is defined in a way that it can provide with high Elasticity. The ML FLow is deployed over EC2 behind a load balancer which will autoscale its instance with the load. Due to which the Mlflow instance will be scale with high throughput. Moreover, the artefacts are store in AWS scalable storage S3 which is handled by AWS itself with a prominent feature of elasticity. Furthermore, to do ML model serving we are using AWS Sage maker which is again a scalable service which deploys an image of ML model and then AWS handles its elasticity its self.
 
-![image alt text](image_2.png)
+![image alt text](ReportImages/image_2.png)
 
 # Results and Monitoring
 
 There are certain monitoring and logging done in a framework. Most of the monitoring done by AWS CloudWatch or simple AWS modules consoles, which can provide us with all the traffics insight and the resource allocation and utilization. One of our critical deploying script which deploys on-demand ML model to Sagemaker store logs as follows:
 
-![image alt text](image_3.png)
+![image alt text](ReportImages/image_3.png)
 
 This is minimal logs which are created IF the image is already created otherwise the process takes more time and all the dependencies logs are generated. In deploying process certain things take parts like we need to have artefacts store in a bucket to have proper versioning and scalability. The artefacts in a bucket look like below:
 
@@ -72,23 +68,23 @@ All the experimentation are secured and scale with s3, which then utilize by MLf
 
 It’s up to the user of how and what he wants to see on Mlflow application, as we are not concerned with what he codes or use, we just show him of the results he logs into ML flow framework, some of the snippets from different results are as follow from Mlflow Experiment management platform.
 
-![image alt text](image_6.png)
+![image alt text](ReportImages/image_6.png)
 
-![image alt text](image_7.png)
+![image alt text](ReportImages/image_7.png)
 
 As you can see, a user can publish its experiment and can easily monitor. This feature, however, belongs to MlFlow framework and my project is just utilizing it. But my project allow users to store all its experimentation on my platform which can be reused in future in anyways. These experimentations can log metric and graph which can be used to compare the result and to make the decision of which model need be deployed further to create an endpoint for related application.
 
 This was, however, is a story from a user perspective. The monitoring done from the platform is different and a customer/user is of no concern of them. However, as a platform engineer, we need to monitor them and put alerts on them to identify pressing or critical bugs and issues which can bring our system down. These measures can cover yet again in another **R3E **of being robust in approach and detect any resource or technical issues. Follow are the resulting monitoring from the AWS platform which is tightly coupled with our platform modules.
 
-![image alt text](image_8.png)
+![image alt text](ReportImages/image_8.png)
 
 The above image shows the resource utilization on our MlFlow EC2 instance which is our main point of contact to a customer. The Mlflow Tracking server and a small Flask server is built on this EC2 which serve Customer request either of experimentation or on-demand ML model deployment. This instance is behind load balancer to avoid any jam from the load and to maintain availability. Furthermore, we also need to monitor Sagemaker endpoint, below images can describe how it utilizes resources. However, this management solely handles by AWS so we do not need to apply any load balancer or anything but we need to monitor pr apply appropriate alarms to avoid any breakage. (PLEASE REFER IMAGE AFTER THIS PAGE)
 
 Another thing we could monitor but it asking for more money so I didn’t enable  It can help us to monitor our S3 storage which needs to be controlled at some point as we need to limit our Customer on experimentation or charge them for extra experimentation artefacts storage.
 
-![image alt text](image_9.png)
+![image alt text](ReportImages/image_9.png)
 
-![image alt text](image_10.png)
+![image alt text](ReportImages/image_10.png)
 
 ## Conclusion:
 
