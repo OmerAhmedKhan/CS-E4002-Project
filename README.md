@@ -60,9 +60,9 @@ There are certain monitoring and logging done in a framework. Most of the monito
 
 This is minimal logs which are created IF the image is already created otherwise the process takes more time and all the dependencies logs are generated. In deploying process certain things take parts like we need to have artefacts store in a bucket to have proper versioning and scalability. The artefacts in a bucket look like below:
 
-![image alt text](image_4.png)
+![image alt text](ReportImages/image_4.png)
 
-![image alt text](image_5.png)
+![image alt text](ReportImages/image_5.png)
 
 All the experimentation are secured and scale with s3, which then utilize by MLflow framework from our EC2 instance to do experiment management and visualization of results and by our Sagemaker to create a Docker container and then deploy it with automated fashion to generate us with endpoint yet to be utilized by the user.
 
