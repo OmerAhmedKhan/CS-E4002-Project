@@ -52,6 +52,12 @@ The Architecture is defined in a way that it can provide with high Elasticity. T
 
 ![image alt text](ReportImages/image_2.png)
 
+# Use Case/Story:
+The User from XYZ industry wants to evaluate its dagta and wants to do predictions on its dataset. But it needs a solution through which he can evaluate its experimentation and then finally want to deploy it with elasticity. However, he may not have the ability to tackle all the DEV-OPS stuff. Which means he needs someone or something to help him to do all this work for him. This platform is best fit for such a scenario. The user can perform all his logics with his dataset in a privacy manner as the system doesn’t require a dataset to upload and finally deploy it in a scalable way.
+
+Now let's say, A data scientist at XYZ company wants to predict/forecast the sales and he has all the data he needs. But he needs to compare his experimentation and not only that he needs to deploy the final iterations and make it scalable to be used in production. The platform can provide a platform of MLflow to do all the experimentation while all its data remains on its premises. All the experimentation is stored on my platform and then on just a single API call it can deploy it to the cloud and provide the endpoint to be used by User in any way.
+
+
 # Results and Monitoring
 
 There are certain monitoring and logging done in a framework. Most of the monitoring done by AWS CloudWatch or simple AWS modules consoles, which can provide us with all the traffics insight and the resource allocation and utilization. One of our critical deploying script which deploys on-demand ML model to Sagemaker store logs as follows:
@@ -86,9 +92,19 @@ Another thing we could monitor but it asking for more money so I didn’t enable
 
 ![image alt text](ReportImages/image_10.png)
 
+## Lesson Learn:
+This course has taught us many things which are closely related to what is needed in the industry. From the origin concept of R3E (Reliability, Resilience, Robustness & Elasticity) to orchestration and ML modeling. With this project I try to  apply each concept I learn, which can be linked as follows:
+
+* R3E - In this project I focus on Elasticity and Robustness by using AWS and MLflow framework with each other which allow robustness from Mlflow and Scalability from AWS
+* Benchmarking & Monitoring  - With Mlflow a user can benchmark its experimentation while monitoring all its past experimentation and with the AWS monitoring system a cloud provider (e.g me) can monitor and set alarms on any critical bottleneck modules. 
+* Coordination of Big Data/ML Tasks - This is my favorite part, it really helps to build my project setup and can connect different pieces together. It also allow us as a student to understand ML serving and deployment on more clear way
+
+
 ## Conclusion:
 
 Overall my platform is a layer over MLFlow framework which enables users to do experimentation and deploy his perfected model over AWS Sagemaker making it Elastic and robust platform to usee. MLflow itself is just an open-source project which doesn’t provide elasticity thus my project is to make the use of the framework to make it scalable and making it much easier to use by the different business application. The concept of this project comes with previous course Big Data Platform in which we are not concerned with the data but to provide a platform which enables different customers and solutions to be build be deployed over it.
+
+## Self-Grading(5/5)
 
 CS-E4002 - ProjectReport.md
 Displaying CS-E4002 - ProjectReport.md.
